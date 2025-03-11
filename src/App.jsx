@@ -4,6 +4,7 @@ import GameBoard from "./components/GameBoard";
 
 function App() {
   const [actPlayer, setActPlayer] = useState('X');
+  const [gameTurns, setGameTurns] = useState([]);
 
   function handleSelectBox () {
     setActPlayer((curPlayer) => curPlayer === 'X' ? 'O' : 'X');
