@@ -1,6 +1,6 @@
 import {useState} from 'react'; // import the useState hook from the react library
 
-export default function Player({initialName, symbol,}) { // define the player component
+export default function Player({initialName, symbol, isActive}) { // define the player component
     const [isEditing, setIsEditing] = useState(false); // create a state variable to track whether the player name is being edited
     const [playerName, setPlayerName] = useState(initialName); // create a state variable to store the player name
 
@@ -24,7 +24,7 @@ export default function Player({initialName, symbol,}) { // define the player co
 
     return(
         <>
-        <li>
+        <li className={isActive ? 'active' : undefined}>
             <span className="player">
                 {editablePlayerName}
                 <span className="player-symbol">{symbol}</span>

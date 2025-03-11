@@ -7,25 +7,33 @@ const initialGameBoard = [   // Array of arrays representing the initial game bo
     [null, null, null],
 ];
 
-export default function GameBoard() {
+export default function GameBoard({onSelectBox, activePlayerSymbol}) {
 
     const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
     function handleBoxClick(rowIndex, colIndex) {
         setGameBoard((prevGameBoard)=> {
             const updatedGameBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            updatedGameBoard[rowIndex][colIndex] = 'X';
+            updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
             return updatedGameBoard;
         })
+
+        onSelectBox();
     }
 
     return (
         <ol id="game-board">
-            {gameBoard.map((row, rowIndex) => <li key={rowIndex}>
+            {gameBoard.map((row, rowIndex) => (
+                <li key={rowIndex}>
             <ol>
-                {row.map((PlayerSymbol,colIndex) => <li key={colIndex}><button onClick={()=>handleBoxClick(rowIndex, colIndex)}>{PlayerSymbol}</button></li>)}
+                {row.map((PlayerSymbol,colIndex) => (
+                    <li key={colIndex}>
+                        <button onClick={()=>handleBoxClick(rowIndex, colIndex)}>{PlayerSymbol}</button>
+                    </li>
+                ))}
             </ol>
-            </li>)}
+        </li>
+    ))}
         </ol>
     );
 }
