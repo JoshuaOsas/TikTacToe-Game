@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import Player from "./components/Player";
 import GameBoard from "./components/GameBoard";
+import Log from './components/Log';
 
 function App() {
   const [actPlayer, setActPlayer] = useState('X');
@@ -8,6 +9,15 @@ function App() {
 
   function handleSelectBox () {
     setActPlayer((curPlayer) => curPlayer === 'X' ? 'O' : 'X');
+
+    setGameTurns((prevTurns) => {
+      let currentPlayer = 'X';
+
+      if(prevTurn > 0 && prevTurns[0].player === 'X'){
+        currentPlayer = 'O';
+      }
+      const updatedTurns = [{row: rowIndex, col: colIndex, player: currentPlayer}, ...prevTurns];
+    });
   }
 
   return (

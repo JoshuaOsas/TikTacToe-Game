@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 const initialGameBoard = [   // Array of arrays representing the initial game board state
     [null, null, null],
@@ -7,19 +6,19 @@ const initialGameBoard = [   // Array of arrays representing the initial game bo
     [null, null, null],
 ];
 
-export default function GameBoard({onSelectBox, activePlayerSymbol}) {
+export default function GameBoard({onSelectBox}) {
 
-    const [gameBoard, setGameBoard] = useState(initialGameBoard);
+//    const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
-    function handleBoxClick(rowIndex, colIndex) {
-        setGameBoard((prevGameBoard)=> {
-            const updatedGameBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
-            updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
-            return updatedGameBoard;
-        })
+//    function handleBoxClick(rowIndex, colIndex) {
+//        setGameBoard((prevGameBoard)=> {
+//            const updatedGameBoard = [...prevGameBoard.map(innerArray => [...innerArray])];
+//            updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
+//            return updatedGameBoard;
+//        })
 
-        onSelectBox();
-    }
+//        onSelectBox();
+//    }
 
     return (
         <ol id="game-board">
@@ -28,7 +27,7 @@ export default function GameBoard({onSelectBox, activePlayerSymbol}) {
             <ol>
                 {row.map((PlayerSymbol,colIndex) => (
                     <li key={colIndex}>
-                        <button onClick={()=>handleBoxClick(rowIndex, colIndex)}>{PlayerSymbol}</button>
+                        <button onClick={onSelectBox}>{PlayerSymbol}</button>
                     </li>
                 ))}
             </ol>
