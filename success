@@ -1,0 +1,23 @@
+[33mcommit 107c5415798996d2f2f89aeeb54886400357127d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Osaghae Obayagbona <obayagbonaosaghaejoshua@gmail.com>
+Date:   Wed Mar 12 17:38:08 2025 +0100
+
+    Prefer Computed Values & Avoid unnecessary state management
+
+[33mcommit 5c3eba049923803150717d0b310d5506d75b2894[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Osaghae Obayagbona <obayagbonaosaghaejoshua@gmail.com>
+Date:   Tue Mar 11 17:13:34 2025 +0100
+
+    lifting up state 2
+
+[33mcommit d6a1d447324fea733769e42974ecb0eac044af81[m
+Author: Osaghae Obayagbona <obayagbonaosaghaejoshua@gmail.com>
+Date:   Tue Mar 11 06:50:52 2025 +0100
+
+    lifting state up
+
+[33mcommit 801f97d8e6550b59ba6750a2d2a0ae86574d873d[m
+Author: Osaghae Obayagbona <obayagbonaosaghaejoshua@gmail.com>
+Date:   Tue Mar 11 04:53:23 2025 +0100
+
+    initial commit
