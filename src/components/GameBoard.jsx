@@ -6,7 +6,8 @@ const initialGameBoard = [   // Array of arrays representing the initial game bo
     [null, null, null],
 ];
 
-export default function GameBoard({onSelectBox}) {
+export default function GameBoard({onSelectBox, turns}) {
+    let gameBoard = initialGameBoard;
 
 //    const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
